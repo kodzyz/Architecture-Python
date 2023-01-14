@@ -35,11 +35,11 @@ class Application:
     def __call__(self, environ, start_response):
 
         path = environ['PATH_INFO']
-        if path in self.routes:
-            view = self.routes[path]
+        if path in self.routes:  # '/'
+            view = self.routes[path]  # index_view
         else:
             view = not_found_404_view
-        code, body = view()
+        code, body = view()  # index_view()
         start_response(code, [('Content-Type', 'text/html')])
         return body
 

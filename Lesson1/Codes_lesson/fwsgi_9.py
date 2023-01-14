@@ -50,16 +50,16 @@ class Application:
     def __call__(self, environ, start_response):
 
         path = environ['PATH_INFO']
-        if path in self.routes:
-            view = self.routes[path]
+        if path in self.routes:  # '/'
+            view = self.routes[path]  # index_view
         else:
             view = not_found_404_view
         request = {}
         # front controller
-        for front in self.fronts:
-            front(request)  # каждая ф-я дополняет 'request'
-        print(f'Application: {request}')  # {'secret': 'some secret', 'key': 'key'}
-        code, body = view(request)
+        for front in self.fronts:  # [secret_front, other_front]
+            front(request)  # каждая ф-я дополняет 'request': secret_front(request)
+        print(f'Application: request={request}')  # request={'secret': 'some secret', 'key': 'key'}
+        code, body = view(request)  # index_view(request)
         start_response(code, [('Content-Type', 'text/html')])
         return body
 
