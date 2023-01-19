@@ -1,5 +1,12 @@
 from abc import ABC, abstractmethod
 
+'''Фабричный метод'''
+
+
+#  Смысл в том,
+# что мы вытащим метод create_animal()
+# и положим его в абстрактный класс.
+# Теперь Animal создает своих потомков сам.
 
 class Animal(ABC):
 

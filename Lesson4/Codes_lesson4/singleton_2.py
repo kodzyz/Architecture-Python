@@ -1,13 +1,19 @@
+'''Синглтон'''
+
+
+# Смысл – всегда используем один экземпляр класса.
+
+# Применяется к: сокет, логгер, настройки программы.
+
 class Singleton(type):
-    #__prepare__
-    #__new__
-    #__init__
-    #__call__
+    # __prepare__
+    # __new__
+    # __init__
+    # __call__
     def __init__(cls, name, bases, attrs, **kwargs):
         # super() - <super: <class 'Singleton'>, <Singleton object>>
         super().__init__(name, bases, attrs)
         cls.__instance = None
-
 
     def __call__(cls, *args, **kwargs):
         # print(cls)
@@ -27,9 +33,9 @@ sql_connection_1 = MySqlConnection()
 sql_connection_2 = MySqlConnection()
 sql_connection_3 = MySqlConnection()
 
-print(sql_connection_1 is sql_connection_3)
+print(sql_connection_1 is sql_connection_3)  # True
 
-print(sql_connection_1.__class__.__class__)
+print(sql_connection_1.__class__.__class__)  # <class '__main__.Singleton'>
 
 """
 <class '__main__.MySqlConnection'>

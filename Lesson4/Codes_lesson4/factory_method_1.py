@@ -1,19 +1,24 @@
 from abc import ABC, abstractmethod
 
+'''Фабричный метод'''
 
-class Animal(ABC):
+
+# базовый класс
+class Animal(ABC):  # абстрактное животное
 
     @abstractmethod
-    def say(self):
+    def say(self):  # умеет говорить
         pass
 
 
+# наследники
 class Dog(Animal):
 
     def say(self):
         print('wow-wow')
 
 
+# наследники
 class Cat(Animal):
 
     def say(self):

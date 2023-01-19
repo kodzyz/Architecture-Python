@@ -1,5 +1,9 @@
 from abc import ABC, abstractmethod
 
+'''Фабричный метод'''
+
+
+#  избавляемся от if...else
 
 class Animal(ABC):
 

@@ -1,3 +1,10 @@
+'''Абстрактная фабрика'''
+#  напишем еще фабричный метод,
+#  который позволит понять, какую фабрику создавать.
+#  Мы его пропишем в абстрактном классе.
+#  Он будет зависеть от типа семейства (network_name).
+#  В нем опишем словарь фабрик.
+
 from abc import ABC, abstractmethod
 
 
@@ -50,6 +57,7 @@ class AbstractFactory(ABC):
 
     @staticmethod
     def create_factory(network_name):
+        ''' фабричный метод'''
         NETWORKS = {
             'Vk': VkFactory,
             'Od': OdFactory,
