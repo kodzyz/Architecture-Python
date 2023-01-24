@@ -58,6 +58,7 @@ class CreateCourse:
             name = site.decode_value(name)
 
             category = None
+
             if self.category_id != -1:
                 category = site.find_category_by_id(int(self.category_id))
 
@@ -93,11 +94,12 @@ class CreateCategory:
             name = data['name']
             name = site.decode_value(name)
 
-            category_id = data.get('category_id')
+            # category_id = data.get('category_id')
+            # print('category_id=', category_id)
 
             category = None
-            if category_id:
-                category = site.find_category_by_id(int(category_id))
+            # if category_id:
+            #     category = site.find_category_by_id(int(category_id))
 
             new_category = site.create_category(name, category)
 
