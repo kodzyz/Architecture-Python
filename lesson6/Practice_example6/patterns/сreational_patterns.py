@@ -1,6 +1,6 @@
 from copy import deepcopy
 from quopri import decodestring
-from behavioral_patterns import FileWriter, Subject
+from patterns.behavioral_patterns import FileWriter, Subject
 
 
 # абстрактный пользователь
