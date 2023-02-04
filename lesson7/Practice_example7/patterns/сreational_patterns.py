@@ -1,8 +1,8 @@
 from copy import deepcopy
 from sqlite3 import connect
 from quopri import decodestring
-from behavioral_patterns import FileWriter, Subject
-from architectural_system_pattern_unit_of_work import DomainObject
+from patterns.behavioral_patterns import FileWriter, Subject
+from patterns.architectural_system_pattern_unit_of_work import DomainObject
 
 
 # абстрактный пользователь

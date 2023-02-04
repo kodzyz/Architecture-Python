@@ -5,7 +5,7 @@ from patterns.сreational_patterns import Engine, Logger, MapperRegistry
 from patterns.structural_patterns import AppRoute, Debug
 from patterns.behavioral_patterns import EmailNotifier, SmsNotifier, \
     ListView, CreateView, BaseSerializer
-from architectural_system_pattern_unit_of_work import UnitOfWork
+from patterns.architectural_system_pattern_unit_of_work import UnitOfWork
 
 site = Engine()
 logger = Logger('main')
